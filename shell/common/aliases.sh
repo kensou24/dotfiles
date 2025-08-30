@@ -44,6 +44,12 @@ alias xx='cd ~/Development/development-workspace'
 
 # let's goooooooooo... yolo!
 alias lfg='claude --model opusplan --dangerously-skip-permissions'
+# Codex Version
+alias lfgc='codex --dangerously-bypass-approvals-and-sandbox'
+alias lfgcl='codex --ask-for-approval never --sandbox danger-full-access -c model_reasoning_effort="low"'
+alias lfgcm='codex --ask-for-approval never --sandbox danger-full-access -c model_reasoning_effort="medium"'
+alias lfgch='codex --ask-for-approval never --sandbox danger-full-access -c model_reasoning_effort="high"'
+alias update-codex='npm i -g @openai/codex'
 
 # Shell-agnostic aliases - detect current shell and use appropriate config
 if [ -n "$ZSH_VERSION" ]; then
