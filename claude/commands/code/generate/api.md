@@ -5,7 +5,7 @@ description: Generate comprehensive API endpoint with framework detection, imple
 
 ## Context
 
-- Session ID: !`gdate +%s%N`
+- Session ID: !`gdate +%s%N 2>/dev/null || date +%s000000000 2>/dev/null || echo "1751901083972081000"`
 - Current directory: !`pwd`
 - Project structure: !`fd . -t d -d 3 | head -20 || echo "No subdirectories found"`
 - Technology stack: !`fd -e json -e toml -e rs -e go -e java . | rg "(package\.json|Cargo\.toml|go\.mod|pom\.xml|build\.gradle)" | head -5 || echo "No technology files detected"`

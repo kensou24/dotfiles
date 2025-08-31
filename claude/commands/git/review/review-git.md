@@ -5,7 +5,7 @@ description: Comprehensive automated git repository review with security analysi
 
 ## Context
 
-- Session ID: !`gdate +%s%N`
+- Session ID: !`gdate +%s%N 2>/dev/null || date +%s000000000 2>/dev/null || echo "1751901083972081000"`
 - Current repository status: !`git status --porcelain`
 - Current branch: !`git branch --show-current`
 - Recent commits: !`git log --oneline -5`

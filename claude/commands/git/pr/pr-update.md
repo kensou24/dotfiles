@@ -5,7 +5,7 @@ description: Update existing pull requests with comprehensive metadata managemen
 
 ## Context
 
-- Session ID: !`gdate +%s%N`
+- Session ID: !`gdate +%s%N 2>/dev/null || date +%s000000000 2>/dev/null || echo "1751901083972081000"`
 - Current PR status: !`gh pr list --head $(git branch --show-current) --json number,title,state,url -q '.[0] // {"number": "none", "title": "No PR found", "state": "N/A", "url": "N/A"}' 2>/dev/null || echo '{"number": "none", "title": "No PR found", "state": "N/A", "url": "N/A"}'`
 - Git branch: !`git branch --show-current`
 - Recent commits: !`git log --oneline -3`

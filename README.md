@@ -14,7 +14,7 @@
 
 ## Agentic Prompt Guidelines
 
-**TL;DR:** Treat slash commands as executable programs, not conversations. Use minimal permissions, unique session IDs (`!`gdate +%s%N``), and explicit control flow (STEP, IF/ELSE, FOR EACH). Follow the `/commit` command as the gold standard example.
+**TL;DR:** Treat slash commands as executable programs, not conversations. Use minimal permissions, unique session IDs (`!`gdate +%s%N 2>/dev/null || date +%s000000000 2>/dev/null || echo "1751901083972081000"``), and explicit control flow (STEP, IF/ELSE, FOR EACH). Follow the `/commit` command as the gold standard example.
 
 ### Core Principles
 
@@ -25,7 +25,7 @@
 
 ### Key Requirements
 
-1. **Session Isolation** - Every command MUST include: `Session ID: !`gdate +%s%N``
+1. **Session Isolation** - Every command MUST include: `Session ID: !`gdate +%s%N 2>/dev/null || date +%s000000000 2>/dev/null || echo "1751901083972081000"``
 2. **Dynamic Context** - Use `!`command`` for real-time data injection
 3. **Minimal Permissions** - Only allow required commands in `allowed-tools`
 4. **Clear Structure** - Front matter → Context → Task definition with examples

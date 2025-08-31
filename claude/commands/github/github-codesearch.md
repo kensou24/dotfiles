@@ -5,7 +5,7 @@ description: Search GitHub for code using GitHub CLI with precise line number pe
 
 ## Context
 
-- Session ID: !`gdate +%s%N`
+- Session ID: !`gdate +%s%N 2>/dev/null || date +%s000000000 2>/dev/null || echo "1751901083972081000"`
 - Search query: $ARGUMENTS
 - Current directory: !`pwd`
 - GitHub CLI auth status: !`gh auth status`

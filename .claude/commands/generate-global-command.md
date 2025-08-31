@@ -5,7 +5,7 @@ description: Interactive generator for global Claude slash commands with namespa
 
 ## Context
 
-- Session ID: !`gdate +%s%N`
+- Session ID: !`gdate +%s%N 2>/dev/null || date +%s000000000 2>/dev/null || echo "1751901083972081000"`
 - Current directory: !`pwd`
 - Claude commands directory: !`eza -la . claude/commands 2>/dev/null | head -10 || echo "Not in dotfiles directory"`
 - Existing namespaces: !`fd -t d -d 1 . claude/commands 2>/dev/null | sort || echo "claude/commands not found"`
@@ -100,7 +100,7 @@ description: [concise_purpose]
 
 ## Context
 
-- Session ID: !`gdate +%s%N`
+- Session ID: !`gdate +%s%N 2>/dev/null || date +%s000000000 2>/dev/null || echo "1751901083972081000"`
 [relevant_dynamic_context]
 
 ## Your task

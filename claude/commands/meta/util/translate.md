@@ -5,7 +5,7 @@ description: Convert code between programming languages with 8x faster performan
 
 ## Context
 
-- Session ID: !`gdate +%s%N`
+- Session ID: !`gdate +%s%N 2>/dev/null || date +%s000000000 2>/dev/null || echo "1751901083972081000"`
 - Target translation: $ARGUMENTS
 - Source language detection: !`fd "(package\.json|Cargo\.toml|go\.mod|pom\.xml|build\.gradle|deno\.json)" . -d 3 | head -3 || echo "No build files detected"`
 - Current directory structure: !`fd . -t f -d 2 | head -10 || echo "Limited file access"`

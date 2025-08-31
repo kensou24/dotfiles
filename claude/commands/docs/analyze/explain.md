@@ -5,7 +5,7 @@ description: Ultra-fast parallel technical explanations using 10 sub-agents for 
 
 ## Context
 
-- Session ID: !`gdate +%s%N`
+- Session ID: !`gdate +%s%N 2>/dev/null || date +%s000000000 2>/dev/null || echo "1751901083972081000"`
 - Current directory: !`pwd`
 - Explanation target: $ARGUMENTS
 - Project structure: !`fd . -t d -d 2 | head -10 || echo "No directories found"`

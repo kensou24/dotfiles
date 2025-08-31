@@ -5,7 +5,7 @@ description: Initialize Docusaurus documentation site with Deno lifecycle integr
 
 ## Context
 
-- Session ID: !`gdate +%s%N`
+- Session ID: !`gdate +%s%N 2>/dev/null || date +%s000000000 2>/dev/null || echo "1751901083972081000"`
 - Current directory: !`pwd`
 - Project name (directory): !`basename "$(pwd)"`
 - Project name (deno.json): !`if [ -f "deno.json" ]; then jq -r '.name // "unknown"' deno.json 2>/dev/null || echo "unknown"; else echo "no deno.json"; fi`

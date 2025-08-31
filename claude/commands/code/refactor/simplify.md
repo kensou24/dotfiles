@@ -7,7 +7,7 @@ description: Ultra-fast parallel code simplification using 10 sub-agents for 10x
 
 ## Context
 
-- Session ID: !`gdate +%s%N`
+- Session ID: !`gdate +%s%N 2>/dev/null || date +%s000000000 2>/dev/null || echo "1751901083972081000"`
 - Current directory: !`pwd`
 - Target file/directory: $ARGUMENTS
 - Code complexity hotspots: !`rg "if.*if.*if|for.*for|while.*while" . | wc -l | tr -d ' '` nested structures found

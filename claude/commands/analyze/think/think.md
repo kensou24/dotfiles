@@ -5,7 +5,7 @@ description: Engage in deep, structured reasoning using sequential thinking
 
 ## Context
 
-- Session ID: !`gdate +%s%N`
+- Session ID: !`gdate +%s%N 2>/dev/null || date +%s000000000 2>/dev/null || echo "1751901083972081000"`
 - Working directory: !`pwd`
 - Current time: !`gdate '+%Y-%m-%d %H:%M:%S'`
 

@@ -5,7 +5,7 @@ description: Ultra-fast parallel web research using sub-agents for 5-10x speedup
 
 ## Context
 
-- Session ID: !`gdate +%s%N`
+- Session ID: !`gdate +%s%N 2>/dev/null || date +%s000000000 2>/dev/null || echo "1751901083972081000"`
 - Research query: $ARGUMENTS
 - Results directory: /tmp/research-results-$SESSION_ID/
 - Current timestamp: !`gdate '+%Y-%m-%d %H:%M:%S'`

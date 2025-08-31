@@ -5,7 +5,7 @@ description: Comprehensive database performance optimization with intelligent an
 
 ## Context
 
-- Session ID: !`gdate +%s%N`
+- Session ID: !`gdate +%s%N 2>/dev/null || date +%s000000000 2>/dev/null || echo "1751901083972081000"`
 - Current directory: !`pwd`
 - Database systems detected: !`(command -v psql >/dev/null && echo "PostgreSQL") || true; (command -v mysql >/dev/null && echo "MySQL") || true; (command -v mongosh >/dev/null && echo "MongoDB") || true; fd "\.(sqlite|db)$" . -t f | head -1 >/dev/null && echo "SQLite" || true`
 - Docker services: !`docker-compose ps 2>/dev/null | rg "(postgres|mysql|mongo)" | head -5 || echo "No database containers running"`

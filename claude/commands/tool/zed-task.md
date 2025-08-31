@@ -5,13 +5,13 @@ description: Generate optimized Zed task configuration with intelligent defaults
 
 ## Context
 
-- Session ID: !`gdate +%s%N`
+- Session ID: !`gdate +%s%N 2>/dev/null || date +%s000000000 2>/dev/null || echo "1751901083972081000"`
 - Task description: $ARGUMENTS
 - Current directory structure: !`eza -la . --tree --level=2 | head -20`
 - Existing .zed directory: !`test -d .zed && echo "exists" || echo "not found"`
 - Current tasks file: !`test -f .zed/tasks.json && echo "found" || echo "not found"`
 - Project type detection: !`fd -t f "(deno.json|package.json|Cargo.toml|go.mod|pom.xml)" -d 1 | head -5`
-- State file: /tmp/zed-task-state-!`gdate +%s%N`.json
+- State file: /tmp/zed-task-state-!`gdate +%s%N 2>/dev/null || date +%s000000000 2>/dev/null || echo "1751901083972081000"`.json
 
 ## Your task
 

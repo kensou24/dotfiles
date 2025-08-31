@@ -14,7 +14,7 @@ Ask for the Claude command content if not provided.
 Remove these elements that don't work in VS Code:
 
 - `---` frontmatter with `allowed-tools` and `description`
-- Session ID generation (`!`gdate +%s%N``)
+- Session ID generation (`!`gdate +%s%N 2>/dev/null || date +%s000000000 2>/dev/null || echo "1751901083972081000"``)
 - Dynamic bash command execution (`!`command``)
 - Sub-agent deployment instructions
 - `/tmp/` directory references

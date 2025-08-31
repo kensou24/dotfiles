@@ -5,7 +5,7 @@ description: Navigate intelligently between related files across the codebase
 
 ## Context
 
-- Session ID: !`gdate +%s%N`
+- Session ID: !`gdate +%s%N 2>/dev/null || date +%s000000000 2>/dev/null || echo "1751901083972081000"`
 - Current directory: !`pwd`
 - Project type: !`if [ -f "deno.json" ]; then echo "Deno"; elif [ -f "package.json" ]; then echo "Node.js"; elif [ -f "Cargo.toml" ]; then echo "Rust"; elif [ -f "go.mod" ]; then echo "Go"; elif [ -f "pom.xml" ]; then echo "Java"; else echo "Unknown"; fi`
 - Git status: !`git status --porcelain | head -5 || echo "No git repository"`

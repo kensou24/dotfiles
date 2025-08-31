@@ -5,7 +5,7 @@ description: Convert existing shell scripts to Deno TypeScript scripts with cros
 
 ## Context
 
-- Session ID: !`gdate +%s%N`
+- Session ID: !`gdate +%s%N 2>/dev/null || date +%s000000000 2>/dev/null || echo "1751901083972081000"`
 - Current directory: !`pwd`
 - Shell scripts found: !`fd "\.(sh|bash)$" . | head -10 || echo "No shell scripts found"`
 - Existing deno.json files: !`fd "deno\.json$" . | head -5 || echo "No deno.json found"`

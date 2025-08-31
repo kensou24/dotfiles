@@ -5,7 +5,7 @@ description: Comprehensive technical debt analysis with actionable remediation s
 
 ## Context
 
-- Session ID: !`gdate +%s%N`
+- Session ID: !`gdate +%s%N 2>/dev/null || date +%s000000000 2>/dev/null || echo "1751901083972081000"`
 - Project root: !`pwd`
 - Technology stack: !`fd "(Cargo\.toml|go\.mod|pom\.xml|deno\.json|package\.json)" . -d 2 | head -5 || echo "No technology files detected"`
 - Project structure: !`fd . -t d -d 3 | head -10 || echo "No directories found"`
