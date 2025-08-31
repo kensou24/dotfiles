@@ -1,0 +1,25 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(where deno:*)",
+      "Bash(powershell:*)",
+      "Bash(C:UsersLES.denobindeno.exe --version)",
+      "Bash(git --version)",
+      "Bash(node:*)",
+      "Bash(npm:*)",
+      "Bash(deno:*)",
+      "Bash(go version:*)",
+      "Bash(rustc:*)",
+      "Bash(cargo:*)",
+      "Bash(docker:*)",
+      "Bash(kubectl version:*)",
+      "Bash(gh:*)",
+      "Bash(curl:*)",
+      "Bash(mvn:*)",
+      "WebSearch",
+      "WebFetch(domain:github.com)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
