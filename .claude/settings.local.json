@@ -17,7 +17,11 @@
       "Bash(curl:*)",
       "Bash(mvn:*)",
       "WebSearch",
-      "WebFetch(domain:github.com)"
+      "WebFetch(domain:github.com)",
+      "Read(C:\\Users\\LES/**)",
+      "Bash(uvx:*)",
+      "Bash(where uvx)",
+      "Bash(pip:*)"
     ],
     "deny": [],
     "ask": []
