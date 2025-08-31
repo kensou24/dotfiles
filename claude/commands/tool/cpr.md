@@ -1,5 +1,5 @@
 ---
-allowed-tools: Bash(git status:*), Bash(git diff:*), Bash(git add:*), Bash(git commit:*), Bash(git push:*), Bash(git branch:*), Bash(gh pr create:*), Bash(git log:*)
+allowed-tools: Bash(git status:*), Bash(git diff:*), Bash(git add:*), Bash(git commit:*), Bash(git push:*), Bash(git branch:*), Bash(gh pr create:*), Bash(git log:*), Bash(git rev-parse:*)
 description: Create commit, push, and open pull request
 ---
 
@@ -7,7 +7,7 @@ description: Create commit, push, and open pull request
 
 - Current git status: !`git status --porcelain`
 - Current branch: !`git branch --show-current`
-- Remote tracking: !`git rev-parse --abbrev-ref --symbolic-full-name @{u} 2>/dev/null || echo "No upstream branch"`
+- Remote tracking: !`git rev-parse --abbrev-ref --symbolic-full-name @{u}`
 - Recent commits: !`git log --oneline -5`
 
 ## Your task
