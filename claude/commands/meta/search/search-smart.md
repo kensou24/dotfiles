@@ -10,7 +10,7 @@ description: Intelligent code search orchestrator using modern tools with parall
 - Search target: $ARGUMENTS
 - Project languages: !`fd "(package\.json|Cargo\.toml|go\.mod|deno\.json|pom\.xml|build\.gradle)" . -d 3 | head -5 || echo "No build files detected"`
 - Codebase size: !`fd "\.(js|ts|jsx|tsx|rs|go|java|py|rb|php|c|cpp|h|hpp|cs|kt|swift|scala)" . | wc -l | tr -d ' '` files
-- Directory structure: !`eza -la . --tree --level=2 2>/dev/null | head -10 `
+- Directory structure: !`eza -la . --tree --level=2 2>/dev/null | head -10`
 - Modern tools status: !`which rg fd bat`
 
 ## Your Task

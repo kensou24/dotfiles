@@ -14,10 +14,10 @@
 ##############################################################################
 
 # Git configuration (universal)
-GIT_AUTHOR_NAME="Will Cygan"
+GIT_AUTHOR_NAME="king"
 GIT_COMMITTER_NAME="$GIT_AUTHOR_NAME"
 git config --global user.name "$GIT_AUTHOR_NAME"
-GIT_AUTHOR_EMAIL="wcygan.io@gmail.com"
+GIT_AUTHOR_EMAIL="501124@les.com"
 GIT_COMMITTER_EMAIL="$GIT_AUTHOR_EMAIL"
 git config --global user.email "$GIT_AUTHOR_EMAIL"
 

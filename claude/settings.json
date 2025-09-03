@@ -1,4 +1,11 @@
 {
+  "cleanupPeriodDays": 90,
+  "env": {
+    "CLAUDE_CODE_ENABLE_TELEMETRY": "0",
+    "EDITOR": "zed",
+    "GIT_EDITOR": "zed --wait"
+  },
+  "includeCoAuthoredBy": false,
   "permissions": {
     "allow": [
       "Bash(deno task :*)",
@@ -30,10 +37,13 @@
       "Bash(gdate :*)",
       "Bash(hexyl :*)",
       "Bash(echo :*)",
+      "Bash(head :*)",
+      "Bash(xargs :*)",
       "Bash(mkdir -p /tmp/claude-scratch*)",
       "Bash(touch /tmp/claude-*)",
       "Bash(echo * > /tmp/claude- :*)",
       "Bash(cat /tmp/claude-*)",
+      "Bash(fd \"(package.json|Cargo.toml|go.mod|pom.xml|deno.json)\" . | head -1 | xargs basename 2>/dev/null || echo \"unknown\" :*)",
       "WebFetch(domain:docs.cilium.io)",
       "WebFetch(domain:fresh.deno.dev)",
       "WebFetch(domain:preactjs.com)",
@@ -122,15 +132,9 @@
       "Bash(> /dev/sda*)"
     ]
   },
-  "env": {
-    "CLAUDE_CODE_ENABLE_TELEMETRY": "0",
-    "EDITOR": "zed",
-    "GIT_EDITOR": "zed --wait"
-  },
-  "cleanupPeriodDays": 90,
-  "includeCoAuthoredBy": false,
   "statusLine": {
     "type": "command",
-    "command": "~/.tools/claude-statusline.ts"
+    "command": "npx -y ccstatusline@latest",
+    "padding": 0
   }
 }
