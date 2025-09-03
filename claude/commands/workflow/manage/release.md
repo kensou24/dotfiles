@@ -5,7 +5,7 @@ description: Production-ready release orchestrator with semantic versioning, cha
 
 ## Context
 
-- Session ID: !`gdate +%s%N 2>/dev/null || date +%s%N 2>/dev/null || echo "$(date +%s)$(jot -r 1 100000 999999 2>/dev/null || shuf -i 100000-999999 -n 1 2>/dev/null || echo $RANDOM$RANDOM)"`
+- Session ID: !`gdate +%s%N 2>/dev/null || date +%s000000000 2>/dev/null || echo "1751901083972081000"`
 - Target release: $ARGUMENTS
 - Current directory: !`pwd`
 - Git status: !`git status --porcelain`
@@ -14,7 +14,7 @@ description: Production-ready release orchestrator with semantic versioning, cha
 - Uncommitted changes: !`git diff --name-only HEAD | wc -l | tr -d ' '` files
 - Recent commits: !`git log --oneline -5 --format="%h %s"`
 - Project structure: !`fd "(package\.json|Cargo\.toml|go\.mod|pom\.xml|build\.gradle|deno\.json)" . -d 2 | head -5 || echo "No build files detected"`
-- Release tools status: !`echo "git: $(which git >/dev/null && echo ✓ || echo ✗) | gh: $(which gh >/dev/null && echo ✓ || echo ✗) | docker: $(which docker >/dev/null && echo ✓ || echo ✗) | jq: $(which jq >/dev/null && echo ✓ || echo ✗)"`
+- Release tools status: !`type git gh docker jq`
 
 ## Your Task
 

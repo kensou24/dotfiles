@@ -5,7 +5,7 @@ description: Orchestrate multi-editor configuration synchronization with intelli
 
 ## Context
 
-- Session ID: !`gdate +%s%N 2>/dev/null || date +%s%N 2>/dev/null || echo "$(date +%s)$(jot -r 1 100000 999999 2>/dev/null || shuf -i 100000-999999 -n 1 2>/dev/null || echo $RANDOM$RANDOM)"`
+- Session ID: !`gdate +%s%N 2>/dev/null || date +%s000000000 2>/dev/null || echo "1751901083972081000"`
 - Target editors: $ARGUMENTS
 - Editor config files detected: !`fd "(keybindings\.json|keymap\.json|settings\.json)" . -d 3 | head -10 || echo "No editor config files found"`
 - Cursor config: !`fd "keybindings\.json" cursor/ -d 2 | head -1 || echo "cursor/keybindings.json not found"`

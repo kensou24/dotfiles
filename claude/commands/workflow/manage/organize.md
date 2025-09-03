@@ -5,12 +5,12 @@ description: Intelligent project organization orchestrator with language-specifi
 
 ## Context
 
-- Session ID: !`gdate +%s%N 2>/dev/null || date +%s%N 2>/dev/null || echo "$(date +%s)$(jot -r 1 100000 999999 2>/dev/null || shuf -i 100000-999999 -n 1 2>/dev/null || echo $RANDOM$RANDOM)"`
+- Session ID: !`gdate +%s%N 2>/dev/null || date +%s000000000 2>/dev/null || echo "1751901083972081000"`
 - Target directory: $ARGUMENTS
 - Current working directory: !`pwd`
 - Git repository status: !`git status --porcelain 2>/dev/null | wc -l | tr -d ' '` uncommitted changes
 - Project build files: !`fd "(package\.json|Cargo\.toml|go\.mod|deno\.json|pom\.xml|build\.gradle|Makefile|CMakeLists\.txt)" "$ARGUMENTS" -d 3 | head -10 || echo "No build files detected"`
-- Directory structure: !`eza -la . --tree --level=2 "$ARGUMENTS" 2>/dev/null | head -15 || fd . -t d "$ARGUMENTS" -d 2 | head -10`
+- Directory structure: !`eza -la . --tree --level=2 "$ARGUMENTS" 2>/dev/null | head -15`
 - File count by type: !`fd "\.(js|ts|jsx|tsx|rs|go|java|py|rb|php|c|cpp|h|hpp|cs|kt|swift|scala)" "$ARGUMENTS" | wc -l | tr -d ' '` source files
 - Configuration files: !`fd "\.(json|yaml|yml|toml|ini|conf|config)" "$ARGUMENTS" | head -10 || echo "No config files found"`
 

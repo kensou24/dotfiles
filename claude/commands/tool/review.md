@@ -5,7 +5,7 @@ description: Comprehensive code review with architectural insights
 
 ## Context
 
-- Project type: !`fd "(package.json|deno.json|Cargo.toml|go.mod|pom.xml)" . -d 1 | head -1 | xargs basename 2>/dev/null || echo "unknown"`
+- Project type: !`fd -t f "package.json" . | head -1` or !`fd -t f "Cargo.toml" . | head -1` or !`fd -t f "go.mod" . | head -1` or !`fd -t f "pom.xml" . | head -1` or !`fd -t f "deno.json" . | head -1` or "unknown"
 - Git status: !`git status --porcelain | wc -l | tr -d ' ' || echo "0"` uncommitted files
 - Recent commits: !`git log --oneline -3 2>/dev/null | head -3 || echo "No git history"`
 - Current branch: !`git branch --show-current 2>/dev/null || echo "not a git repo"`

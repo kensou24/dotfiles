@@ -21,7 +21,9 @@
       "Read(C:\\Users\\LES/**)",
       "Bash(uvx:*)",
       "Bash(where uvx)",
-      "Bash(pip:*)"
+      "Bash(pip:*)",
+      "Bash(dir:*)",
+      "Read(C:\\Users\\LES/**)"
     ],
     "deny": [],
     "ask": []

@@ -5,14 +5,14 @@ description: Development progress tracker with timestamped entries and intellige
 
 ## Context
 
-- Session ID: !`gdate +%s%N 2>/dev/null || date +%s%N 2>/dev/null || echo "$(date +%s)$(jot -r 1 100000 999999 2>/dev/null || shuf -i 100000-999999 -n 1 2>/dev/null || echo $RANDOM$RANDOM)"`
+- Session ID: !`gdate +%s%N 2>/dev/null || date +%s000000000 2>/dev/null || echo "1751901083972081000"`
 - Current directory: !`pwd`
 - Progress target: $ARGUMENTS
 - Current date: !`gdate +%Y-%m-%d 2>/dev/null || date +%Y-%m-%d`
 - Current time: !`gdate "+%H:%M:%S %Z" 2>/dev/null || date "+%H:%M:%S %Z"`
 - Existing progress structure: !`fd "progress" . -t d -d 2 2>/dev/null | head -3 || echo "No progress directory found"`
 - Recent progress entries: !`fd "\.md$" ./progress/ -d 3 2>/dev/null | tail -5 || echo "No progress entries found"`
-- Modern tools status: !`echo "fd: $(which fd >/dev/null && echo ✓ || echo ✗) | bat: $(which bat >/dev/null && echo ✓ || echo ✗) | eza: $(which eza >/dev/null && echo ✓ || echo ✗)"`
+- Modern tools status: !`which rg fd bat`
 
 ## Your Task
 

@@ -1,5 +1,5 @@
 ---
-allowed-tools: Read, Bash(fd:*), Bash(rg:*), Bash(git:*)
+allowed-tools: Read, Bash(fd:*), Bash(rg:*), Bash(git:*), Bash(head:*), Bash(xargs:*), Bash(echo:*)
 description: Create comprehensive project development plans
 ---
 
@@ -7,7 +7,7 @@ description: Create comprehensive project development plans
 
 - Target project: $ARGUMENTS
 - Current directory: !`pwd`
-- Project type: !`fd "(package.json|Cargo.toml|go.mod|pom.xml|deno.json)" . | head -1 | xargs basename 2>/dev/null || echo "unknown"`
+- Project type: !`fd -t f "package.json" . | head -1` or !`fd -t f "Cargo.toml" . | head -1` or !`fd -t f "go.mod" . | head -1` or !`fd -t f "pom.xml" . | head -1` or !`fd -t f "deno.json" . | head -1` or "unknown"
 - Source files: !`fd "\.(js|ts|rs|go|java|py|c|cpp)" . | wc -l | tr -d ' ' || echo "0"` files
 - Documentation: !`fd "(README|CONTRIBUTING|CHANGELOG)" . | head -3 || echo "No docs found"`
 - Git status: !`git status --porcelain 2>/dev/null | wc -l | tr -d ' ' || echo "0"` uncommitted changes

@@ -5,7 +5,7 @@ description: Generate structured conversation summary with key decisions, action
 
 ## Context
 
-- Session ID: !`gdate +%s%N 2>/dev/null || date +%s%N 2>/dev/null || echo "$(date +%s)$(jot -r 1 100000 999999 2>/dev/null || shuf -i 100000-999999 -n 1 2>/dev/null || echo $RANDOM$RANDOM)"`
+- Session ID: !`gdate +%s%N 2>/dev/null || date +%s000000000 2>/dev/null || echo "1751901083972081000"`
 - Conversation length: !`echo "Calculating conversation size..." | wc -c || echo "unknown"`
 - Target format: Structured business summary with actionable insights
 

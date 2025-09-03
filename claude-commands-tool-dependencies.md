@@ -8,33 +8,33 @@
 
 ### ✅ 已安装的工具
 
-| 工具 | 版本 | 状态 |
-|------|------|------|
-| Git | 2.45.1.windows.1 | ✅ 已安装 |
-| Node.js | v22.17.1 | ✅ 已安装 |
-| npm | 10.9.2 | ✅ 已安装 |
-| Python | 3.11.5 | ✅ 已安装 |
-| Go | go1.24.3 | ✅ 已安装 |
-| Rust | 1.87.0 | ✅ 已安装 |
-| Cargo | 1.87.0 | ✅ 已安装 |
-| ripgrep (rg) | 13.0.0 | ✅ 已安装 |
-| GitHub CLI (gh) | 2.78.0 | ✅ 已安装 |
-| curl | 8.7.1 | ✅ 已安装 |
-| Maven (mvn) | 3.9.8 | ✅ 已安装 |
-| pytest | ✅ 已安装 |
-| jq | 1.6 | ✅ 已安装 |
+| 工具            | 版本             | 状态      |
+| --------------- | ---------------- | --------- |
+| Git             | 2.45.1.windows.1 | ✅ 已安装 |
+| Node.js         | v22.17.1         | ✅ 已安装 |
+| npm             | 10.9.2           | ✅ 已安装 |
+| Python          | 3.11.5           | ✅ 已安装 |
+| Go              | go1.24.3         | ✅ 已安装 |
+| Rust            | 1.87.0           | ✅ 已安装 |
+| Cargo           | 1.87.0           | ✅ 已安装 |
+| ripgrep (rg)    | 13.0.0           | ✅ 已安装 |
+| GitHub CLI (gh) | 2.78.0           | ✅ 已安装 |
+| curl            | 8.7.1            | ✅ 已安装 |
+| Maven (mvn)     | 3.9.8            | ✅ 已安装 |
+| pytest          | ✅ 已安装        |           |
+| jq              | 1.6              | ✅ 已安装 |
 
 ### ❌ 缺失的工具
 
-| 工具 | 状态 | 安装优先级 |
-|------|------|------------|
-| Deno | ❌ 缺失 | 高 |
-| Docker | ❌ 缺失 | 高 |
-| kubectl | ❌ 缺失 | 高 |
-| Helm | ❌ 缺失 | 中 |
-| Skaffold | ❌ 缺失 | 中 |
-| Terraform | ❌ 缺失 | 中 |
-| fd | ❌ 缺失 | 中 |
+| 工具      | 状态    | 安装优先级 |
+| --------- | ------- | ---------- |
+| Deno      | ❌ 缺失 | 高         |
+| Docker    | ❌ 缺失 | 高         |
+| kubectl   | ❌ 缺失 | 高         |
+| Helm      | ❌ 缺失 | 中         |
+| Skaffold  | ❌ 缺失 | 中         |
+| Terraform | ❌ 缺失 | 中         |
+| fd        | ❌ 缺失 | 中         |
 
 ## 详细安装指南
 
@@ -58,6 +58,7 @@ scoop install deno
 ```
 
 **验证安装:**
+
 ```bash
 deno --version
 ```
@@ -79,6 +80,7 @@ choco install docker-desktop
 ```
 
 **验证安装:**
+
 ```bash
 docker --version
 docker run hello-world
@@ -101,6 +103,7 @@ scoop install kubectl
 ```
 
 **验证安装:**
+
 ```bash
 kubectl version --client
 ```
@@ -122,6 +125,7 @@ scoop install helm
 ```
 
 **验证安装:**
+
 ```bash
 helm version
 ```
@@ -143,6 +147,7 @@ scoop install skaffold
 ```
 
 **验证安装:**
+
 ```bash
 skaffold version
 ```
@@ -164,6 +169,7 @@ scoop install terraform
 ```
 
 **验证安装:**
+
 ```bash
 terraform version
 ```
@@ -189,6 +195,7 @@ cargo install fd-find
 ```
 
 **验证安装:**
+
 ```bash
 fd --version
 ```
@@ -219,6 +226,7 @@ scoop bucket add versions
 ## 依赖工具按命令分类
 
 ### Git 相关命令
+
 - `/git/commit/commit.md`
 - `/git/commit/commit-push.md`
 - `/git/merge/merge-main.md`
@@ -232,6 +240,7 @@ scoop bucket add versions
 **所需工具:** Git, GitHub CLI (gh)
 
 ### DevOps/Kubernetes 相关命令
+
 - `/kubernetes/k8s-debug.md`
 - `/ops/deploy/containerize.md`
 - `/ops/deploy/deploy.md`
@@ -242,6 +251,7 @@ scoop bucket add versions
 **所需工具:** kubectl, Helm, Docker, Skaffold
 
 ### 代码分析与重构命令
+
 - `/code/analyze/bottleneck.md`
 - `/code/analyze/dependencies.md`
 - `/code/analyze/technical-debt.md`
@@ -253,6 +263,7 @@ scoop bucket add versions
 **所需工具:** rg (ripgrep), fd, jq
 
 ### 测试相关命令
+
 - `/test/analyze/coverage.md`
 - `/test/debug/debug.md`
 - `/test/fix/flaky-fix.md`
@@ -264,6 +275,7 @@ scoop bucket add versions
 **所需工具:** pytest, Node.js (npm), Deno
 
 ### 文档相关命令
+
 - `/docs/analyze/explain.md`
 - `/docs/generate-docs.md`
 - `/docs/manage/docs-add.md`

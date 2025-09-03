@@ -5,7 +5,7 @@ description: Ultra-fast strategic roadmap generation using 8 parallel sub-agents
 
 ## Context
 
-- Session ID: !`gdate +%s%N 2>/dev/null || date +%s%N`
+- Session ID: !`gdate +%s%N 2>/dev/null || date +%s000000000 2>/dev/null || echo "1751901083972081000"`
 - Current directory: !`pwd`
 - Existing planning files: !`fd -t f -e md . | rg -i "plan|roadmap|strategy" | head -5 || echo "No existing planning files found"`
 - Initiative: $ARGUMENTS

@@ -1,22 +1,56 @@
 ---
-allowed-tools: Read, Task, Bash(fd:*), Bash(rg:*), Bash(bat:*), Bash(wc:*), Bash(head:*), Bash(tail:*), Bash(eza:*), Bash(gdate:*)
+allowed-tools: Read, Task, Bash(fd:*), Bash(rg:*), Bash(bat:*), Bash(wc:*), Bash(head:*), Bash(tail:*), Bash(eza:*), Bash(gdate:*), Bash(if:*)
 description: Generate concise, actionable TL;DR summaries with progressive disclosure and strategic thinking
 ---
 
 ## Context
 
-- Session ID: !`gdate +%s%N 2>/dev/null || date +%s%N 2>/dev/null || echo "$(date +%s)$(jot -r 1 100000 999999 2>/dev/null || shuf -i 100000-999999 -n 1 2>/dev/null || echo $RANDOM$RANDOM)"`
+- Session ID: !`gdate +%s%N 2>/dev/null || date +%s000000000 2>/dev/null || echo "1751901083972081000"`
 - Target content: $ARGUMENTS
-- Content type: !`if [ -f "$ARGUMENTS" ]; then echo "file" && eza -la "$ARGUMENTS" 2>/dev/null | head -1; elif [ -d "$ARGUMENTS" ]; then echo "directory" && eza -la "$ARGUMENTS" 2>/dev/null | head -3; else echo "topic/discussion"; fi`
-- Content size: !`if [ -f "$ARGUMENTS" ]; then wc -l "$ARGUMENTS" 2>/dev/null | head -1; elif [ -d "$ARGUMENTS" ]; then fd . "$ARGUMENTS" -t f | wc -l 2>/dev/null; else echo "unknown"; fi`
-- File preview: !`if [ -f "$ARGUMENTS" ]; then head -10 "$ARGUMENTS" 2>/dev/null | bat --style=plain -l markdown; else echo "Not a file"; fi`
+- Content type: Will be determined in Step 1
+- Content size: Will be analyzed in Step 1
+- File preview: Will be shown in Step 1
 
 ## Your Task
 
 STEP 1: Initialize TL;DR session with intelligent content analysis
 
 - CREATE session state file: `/tmp/tldr-session-$SESSION_ID.json`
-- ANALYZE content type and complexity from Context section
+- ANALYZE content type and complexity using these commands:
+
+```bash
+# Check content type
+if [ -f "$ARGUMENTS" ]; then
+    echo "Content type: file"
+    eza -la "$ARGUMENTS" 2>/dev/null
+elif [ -d "$ARGUMENTS" ]; then
+    echo "Content type: directory" 
+    eza -la "$ARGUMENTS" 2>/dev/null
+else
+    echo "Content type: topic/discussion"
+fi
+```
+
+```bash
+# Get content size
+if [ -f "$ARGUMENTS" ]; then
+    wc -l "$ARGUMENTS" 2>/dev/null
+elif [ -d "$ARGUMENTS" ]; then
+    fd . "$ARGUMENTS" -t f | wc -l 2>/dev/null
+else
+    echo "Size: unknown"
+fi
+```
+
+```bash
+# Show file preview
+if [ -f "$ARGUMENTS" ]; then
+    head -10 "$ARGUMENTS" 2>/dev/null | bat --style=plain -l markdown
+else
+    echo "Not a file - no preview available"
+fi
+```
+
 - DETERMINE optimal TL;DR strategy based on content characteristics
 - PLAN progressive disclosure levels (30-second, 2-minute, 5-minute)
 

@@ -5,7 +5,7 @@ description: Ultra-fast parallel migration planning using 10 sub-agents for comp
 
 ## Context
 
-- Session ID: !`gdate +%s%N 2>/dev/null || date +%s%N`
+- Session ID: !`gdate +%s%N 2>/dev/null || date +%s000000000 2>/dev/null || echo "1751901083972081000"`
 - Current directory: !`pwd`
 - Project files: !`fd "(go\.mod|Cargo\.toml|pom\.xml|package\.json|deno\.json)" --max-depth 2 | head -5 || echo "No project files found"`
 - Migration directories: !`fd "migrations?" --type d | head -5 || echo "No migration directories found"`

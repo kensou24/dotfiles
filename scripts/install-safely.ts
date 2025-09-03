@@ -143,10 +143,10 @@ function getInstallConfig(): InstallConfig {
   const homeDir = Deno.env.get("HOME") || Deno.env.get("USERPROFILE") || "";
   const backupDir = join(homeDir, `.dotfiles-backup-${timestamp}`);
 
-  // Get current script directory and go up one level to get dotfiles root
-  const currentFile = new URL(import.meta.url).pathname;
-  const scriptsDir = dirname(currentFile);
-  const dotfilesDir = dirname(scriptsDir);
+  // Get current script directory (dotfiles root)
+  // Use Deno.cwd() for Windows compatibility instead of import.meta.url
+  const scriptsDir = Deno.cwd();
+  const dotfilesDir = scriptsDir;
 
   const shell = Deno.env.get("SHELL") || "";
   const user = Deno.env.get("USER") || Deno.env.get("USERNAME") || "";

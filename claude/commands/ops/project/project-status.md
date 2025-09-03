@@ -7,7 +7,7 @@ description: Project health check for any technology stack
 
 - Target: $ARGUMENTS (optional - specify technology: deno|go|rust|java|k8s|pnpm)
 - Current directory: !`pwd`
-- Project type detected: !`fd "(deno.json|go.mod|Cargo.toml|pom.xml|package.json|kubernetes|kustomization)" . -d 1 | head -1 | xargs basename 2>/dev/null || echo "unknown"`
+- Project type detected: !`fd -t f "package.json" . | head -1` or !`fd -t f "Cargo.toml" . | head -1` or !`fd -t f "go.mod" . | head -1` or !`fd -t f "pom.xml" . | head -1` or !`fd -t f "deno.json" . | head -1` or "unknown"
 
 **Technology-Specific Context:**
 
