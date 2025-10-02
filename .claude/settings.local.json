@@ -24,7 +24,8 @@
       "Bash(pip:*)",
       "Bash(dir:*)",
       "Read(C:\\Users\\LES/**)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(git commit:*)"
     ],
     "deny": [],
     "ask": []
