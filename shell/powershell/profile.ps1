@@ -1,9 +1,9 @@
-# Place this file into `C:\Users\Will\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1`
+# Place this file into `C:\Users\LES\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1`
 # Or create the file with `New-Item -path $profile -type file -force`
 
 # Copy profile.ps1 to Microsoft.PowerShell_profile.ps1 so that it is loaded on startup
 function Copy-Profile {
-    copy profile.ps1 C:\Users\Will\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1
+    copy profile.ps1 C:\Users\LES\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1
     Write-Output "Profile copied!"
 }
 
@@ -11,7 +11,7 @@ function Copy-Profile {
 Set-Alias -Name cpro -Value Copy-Profile
 
 function Edit-Profile {
-    code C:\Users\Will\Development\dotfiles
+    code C:\Users\LES\Development\dotfiles
 }
 
 Set-Alias -Name pro -Value Edit-Profile
@@ -29,7 +29,7 @@ Set-PsFzfOption -PSReadlineChordProvider 'Ctrl+t' -PSReadlineChordReverseHistory
 
 # Switch to the development directory
 function Switch-To-Dev {
-    cd 'C:\Users\Will\Development'
+    cd 'C:\Users\LES\Development'
 }
 
 Set-Alias -Name dev -Value Switch-To-Dev

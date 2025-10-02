@@ -23,7 +23,8 @@
       "Bash(where uvx)",
       "Bash(pip:*)",
       "Bash(dir:*)",
-      "Read(C:\\Users\\LES/**)"
+      "Read(C:\\Users\\LES/**)",
+      "Bash(git add:*)"
     ],
     "deny": [],
     "ask": []
